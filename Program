@@ -1,0 +1,25 @@
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Clásica
+        Hamburguesa h1 = new Hamburguesa("Pan normal", "Res", 5);
+        h1.AgregarAdicional1("Lechuga", 0.5);
+        h1.AgregarAdicional2("Tomate", 0.5);
+        h1.Mostrar();
+
+        Console.WriteLine("----------------");
+
+        // Saludable
+        HamburguesaSaludable h2 = new HamburguesaSaludable("Pollo", 6);
+        h2.AgregarExtra1("Aguacate", 1);
+        h2.Mostrar();
+
+        Console.WriteLine("----------------");
+
+        // Premium
+        HamburguesaPremium h3 = new HamburguesaPremium("Res", 8);
+        h3.AgregarAdicional1("Queso", 1); // no debería dejar
+        h3.Mostrar();
+    }
+}
