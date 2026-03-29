@@ -1,0 +1,24 @@
+public class PremiumBurger : Hamburguesa
+{
+    public PremiumBurger(string carne, double precioBase)
+        : base("Pan Brioche", carne, precioBase)
+    {
+        // Se agregan solos
+        adicional1 = "Papas";
+        precio1 = 3.5;
+
+        adicional2 = "Bebida";
+        precio2 = 2.0;
+    }
+
+    // No permitir más adicionales
+    public new void AgregarAdicional1(string n, double p)
+    {
+        Console.WriteLine("No se permiten extras");
+    }
+
+    public new void AgregarAdicional2(string n, double p)
+    {
+        Console.WriteLine("No se permiten extras");
+    }
+}
