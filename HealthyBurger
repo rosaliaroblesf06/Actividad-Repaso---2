@@ -1,0 +1,45 @@
+public class HealthyBurger : Hamburguesa
+{
+    public string extra1;
+    public string extra2;
+
+    public double precioExtra1;
+    public double precioExtra2;
+
+    public HealthyBurger(string carne, double precioBase)
+        : base("Pan Integral", carne, precioBase)
+    {
+    }
+
+    public void AgregarExtra1(string nombre, double precio)
+    {
+        extra1 = nombre;
+        precioExtra1 = precio;
+    }
+
+    public void AgregarExtra2(string nombre, double precio)
+    {
+        extra2 = nombre;
+        precioExtra2 = precio;
+    }
+
+    public new double CalcularTotal()
+    {
+        double total = base.CalcularTotal();
+
+        if (extra1 != null) total += precioExtra1;
+        if (extra2 != null) total += precioExtra2;
+
+        return total;
+    }
+
+    public new void Mostrar()
+    {
+        base.Mostrar();
+
+        if (extra1 != null) Console.WriteLine(extra1 + " + " + precioExtra1);
+        if (extra2 != null) Console.WriteLine(extra2 + " + " + precioExtra2);
+
+        Console.WriteLine("TOTAL FINAL: " + CalcularTotal());
+    }
+}
