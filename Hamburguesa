@@ -1,0 +1,76 @@
+using System;
+
+public class Hamburguesa
+{
+    public string tipoPan;
+    public string carne;
+    public double precioBase;
+
+    public string adicional1;
+    public string adicional2;
+    public string adicional3;
+    public string adicional4;
+
+    public double precio1;
+    public double precio2;
+    public double precio3;
+    public double precio4;
+
+    public Hamburguesa(string tipoPan, string carne, double precioBase)
+    {
+        this.tipoPan = tipoPan;
+        this.carne = carne;
+        this.precioBase = precioBase;
+    }
+
+    public void AgregarAdicional1(string nombre, double precio)
+    {
+        adicional1 = nombre;
+        precio1 = precio;
+    }
+
+    public void AgregarAdicional2(string nombre, double precio)
+    {
+        adicional2 = nombre;
+        precio2 = precio;
+    }
+
+    public void AgregarAdicional3(string nombre, double precio)
+    {
+        adicional3 = nombre;
+        precio3 = precio;
+    }
+
+    public void AgregarAdicional4(string nombre, double precio)
+    {
+        adicional4 = nombre;
+        precio4 = precio;
+    }
+
+    public double CalcularTotal()
+    {
+        double total = precioBase;
+
+        if (adicional1 != null) total += precio1;
+        if (adicional2 != null) total += precio2;
+        if (adicional3 != null) total += precio3;
+        if (adicional4 != null) total += precio4;
+
+        return total;
+    }
+
+    public void Mostrar()
+    {
+        Console.WriteLine("Hamburguesa:");
+        Console.WriteLine("Pan: " + tipoPan);
+        Console.WriteLine("Carne: " + carne);
+        Console.WriteLine("Precio base: " + precioBase);
+
+        if (adicional1 != null) Console.WriteLine(adicional1 + " + " + precio1);
+        if (adicional2 != null) Console.WriteLine(adicional2 + " + " + precio2);
+        if (adicional3 != null) Console.WriteLine(adicional3 + " + " + precio3);
+        if (adicional4 != null) Console.WriteLine(adicional4 + " + " + precio4);
+
+        Console.WriteLine("TOTAL: " + CalcularTotal());
+    }
+}
